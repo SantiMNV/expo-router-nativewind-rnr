@@ -1,10 +1,13 @@
+const { theme } = require("./lib/theme");
+
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  // NOTE: Update this to include the paths to all of your component files.
-  content: ["./app/**/*.{js,jsx,ts,tsx}"],
-  presets: [require("nativewind/preset")],
+  darkMode: 'class',
+  content: ['./app/**/*.{ts,tsx}', './components/**/*.{ts,tsx}'],
+  presets: [require('nativewind/preset')],
   theme: {
-    extend: {},
+    ...theme
   },
-  plugins: [],
-}
+  plugins: [require('tailwindcss-animate')],
+};
